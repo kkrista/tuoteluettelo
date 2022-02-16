@@ -1,0 +1,13 @@
+
+<ul class="mb-3 card list-group list-group-flush col" id="myList" *ngFor="let phone of phoneData.phones | phoneFilter: searchList | orderBy: orderHeader"     >
+
+  <li class="list-group-item" >
+      <img class="col-sm-2 float-start" src={{phone.imageUrl}} alt="">
+
+      <div class="col-sm-8 float-end p-4">
+          <h4 class="text-primary"  ><a routerLink="/phones/{{ phone.id }}"> {{ phone.id }}</a></h4>
+          <p >{{ phone.snippet }} </p>
+      </div>
+  </li>
+
+</ul>
