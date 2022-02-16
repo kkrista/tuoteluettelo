@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
-import phones from "../assets/phones/phones.json";
+import { Component, Input } from '@angular/core';
+
+import { PhoneListComponent } from './phone-list/phone-list.component';
 
 @Component({
   selector: 'app-root',
@@ -7,11 +8,14 @@ import phones from "../assets/phones/phones.json";
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  phoneData: any;
+  title = 'Phone List';
+  @Input()searchList! : PhoneListComponent;
 
-  constructor() {
-    this.phoneData = phones;
+  constructor () {}
+
+  ngOnInit(): void {
+
+
   }
 
-  ngOnInit() {}
 }
