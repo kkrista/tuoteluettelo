@@ -1,0 +1,76 @@
+<div class="card mb-3" *ngIf="allReady">
+  <div class="row g-0">
+    <div class="col-sm-4 float-start">
+      <img
+      id="view-img"
+        src="../../assets/{{ chosenPhone.images[0] }}"
+        class="mt-5 mw-100"
+        alt="..."
+      />
+    </div>
+    <div class="col-sm-8 float-end">
+      <div class="card-body">
+        <div>
+          <h1 class="card-title">{{ chosenPhone.name }}</h1>
+          <hr />
+          <p class="card-text">
+            {{ chosenPhone.description }}
+          </p>
+        </div>
+
+        <div>
+          <div class="row p-5 m-2">
+            <section
+              class="show-images col-3 border border-dark m-2 rounded-2"
+              *ngFor="let image of chosenPhone.images"
+            >
+              <figure class="phone-item-info-small-image">
+                <img
+                  (click)="changeImg($event)"
+                  src="{{ 'assets/' + image }}"
+                  alt="{{ phoneId }}"
+                  class="pointer w-100"
+                />
+              </figure>
+            </section>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="row">
+  <div class="col-6 col-md m-5">
+    <h4>Availabilty and Networks</h4>
+    <p>{{ chosenPhone.availability }}</p>
+  </div>
+  <div class="col-6 col-md m-5">
+    <h4>Battery</h4>
+    <h6>Type</h6>
+    <p>{{ chosenPhone.battery.type }}</p>
+    <h6>Talk Time</h6>
+    <p>{{ chosenPhone.battery.talkTime }}</p>
+    <h6>Standbt Time (Max)</h6>
+    <p>{{ chosenPhone.battery.standbyTime }}</p>
+
+
+  </div>
+  <div class="col-6 col-md m-5">
+    <h4>Storage and Memory</h4>
+    <h6>RAM</h6>
+    <p>{{ chosenPhone.storage.ram }}</p>
+    <h6>Internal Storage</h6>
+    <p>{{ chosenPhone.storage.flash }}</p>
+  </div>
+  <div class="col-6 col-md m-5">
+    <h4>Connectivity</h4>
+    <h6>Network Support</h6>
+    <h6>WIFI</h6>
+    <p>{{ chosenPhone.connectivity.wifi }}</p>
+    <h6>Bluetooth</h6>
+    <p>{{ chosenPhone.connectivity.bluetooth }}</p>
+    <h6 >Infrared</h6>
+
+  </div>
+</div>
